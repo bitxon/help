@@ -1,12 +1,24 @@
 # Docker
 
-## Base docker commands
+## Image
 ```bash
+# List all images
+docker image ls
+
 # Build and tag image
-docker build -t <image-tag> .
+docker build -t myimage:latest .
+
+# Remove image
+docker image rm myimage:latest
+```
+
+## Container
+```bash
+# List all containers
+docker ps
 
 # Run container from image
-docker run -p 27017:27017 node
+docker run --name <name> -p 27017:27017 node
 
 # Stop container by container id
 docker stop <container-id>
@@ -14,18 +26,16 @@ docker stop <container-id>
 # Re-start container by container id
 docker start <container-id>
 
-# List containers
-docker ps
+# Show the last 100 lines of logs
+docker container logs --tail 100 <container-id>
 ```
 
 ## Advanced docker commands
 
-### Show all dangling images
+### Dangling images
 ```bash
+# List all dangling images
 docker images --filter "dangling=true" -q --no-trunc
-```
-
-### Remove All danling images
-```bash
+# Remove all dangling images
 docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
 ```
