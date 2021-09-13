@@ -41,3 +41,12 @@ git rm -rf --cached .
 git add .
 git commt -m "Message"
 ```
+
+Specific SSH key
+```bash
+# Push
+GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa_myrsa' git push origin main
+# Or we could edit .git/config file in our repo and add sshCommand for [core]
+[core]
+  sshCommand = "ssh -i ~/.ssh/id_rsa_myrsa"
+```
