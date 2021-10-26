@@ -9,6 +9,10 @@ docker image ls
 docker build -t myimage:latest .
 # Remove image
 docker image rm myimage:latest
+# Save image backup
+docker save -o myimage.tar myimage:latest
+# Load image from backupfile
+docker load -i myimage.tar
 ```
 
 ## Container
@@ -18,6 +22,8 @@ Base commands
 docker ps
 # Run container from image
 docker run --name <name> -p 27017:27017 node
+# Run container interactive
+docker run -it --rm busybox
 # Stop container by container id
 docker stop <container-id>
 # Re-start container by container id
@@ -31,6 +37,13 @@ Adjustment commands
 docker cp <container-id>:/tmp/myfile.txt myfile.txt 
 # Copy File to container
 docker cp <container-id>:/tmp/myfile.txt myfile.txt 
+```
+
+## Compose
+Base commands
+```bash
+# Up with build
+docker-compose -f "docker-compose.yml" up -d --build
 ```
 
 ## Advanced docker commands
