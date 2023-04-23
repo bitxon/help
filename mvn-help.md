@@ -12,3 +12,9 @@ mvn versions:set -DremoveSnapshot -DprocessAllModules=true -DgenerateBackupPoms=
 # Switch to new next Snapshot version
 mvn versions:set -DnextSnapshot -DprocessAllModules=true -DgenerateBackupPoms=false
 ```
+
+## Dependencies 
+```bash
+# Display dependency tree (use verbose to show version resolution reason)
+mvn dependency:tree -Dverbose=true
+```
