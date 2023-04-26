@@ -35,6 +35,12 @@ Show all records when branches and other references were updated (even deleted b
 git reflog
 ```
 
+Revert to commit 
+```bash
+git revert --no-commit 0766c053..HEAD
+git commit -m "Revert to old version"
+```
+
 Commit changes in `.gitignore` file
 ```bash
 git rm -rf --cached .
