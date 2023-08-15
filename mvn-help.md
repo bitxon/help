@@ -1,5 +1,11 @@
 # Maven
 
+## Get Info
+```bash
+# Print current project version
+mvn help:evaluate -Dexpression=project.version -DforceStdout -q
+```
+
 ## Version Switch
 
 ```bash
