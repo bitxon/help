@@ -23,4 +23,7 @@ mvn versions:set -DnextSnapshot -DprocessAllModules=true -DgenerateBackupPoms=fa
 ```bash
 # Display dependency tree (use verbose to show version resolution reason)
 mvn dependency:tree -Dverbose=true
+
+# Using breadth-first approach to resolve Maven dependencies (Faster download)
+mvn dependency:go-offline -Daether.dependencyCollector.impl=bf
 ```
