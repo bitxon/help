@@ -27,3 +27,9 @@ mvn dependency:tree -Dverbose=true
 # Using breadth-first approach to resolve Maven dependencies (Faster download)
 mvn dependency:go-offline -Daether.dependencyCollector.impl=bf
 ```
+
+## Other
+```
+## Suppress log message about downloading libraries '--no-transfer-progress' or '-ntp'
+mvn verify -ntp
+```
