@@ -2,7 +2,7 @@
 
 ## Image
 Base commands
-```bash
+```shell
 # List all images
 docker image ls
 # Build and tag image
@@ -17,7 +17,7 @@ docker load -i myimage.tar
 
 ## Container
 Base commands
-```bash
+```shell
 # List all containers
 docker ps
 # Run container from image
@@ -32,16 +32,16 @@ docker start <container-id>
 docker container logs --tail 100 <container-id>
 ```
 Adjustment commands
-```bash
-# Copy File to local machine
+```shell
+# Copy File: Container -> Local
 docker cp <container-id>:/tmp/myfile.txt myfile.txt 
-# Copy File to container
-docker cp <container-id>:/tmp/myfile.txt myfile.txt 
+# Copy File: Local -> Container
+docker cp myfile.txt <container-id>:/tmp/myfile.txt 
 ```
 
 ## Compose
 Base commands
-```bash
+```shell
 # Up with build
 docker-compose -f "docker-compose.yml" up -d --build
 ```
@@ -49,7 +49,7 @@ docker-compose -f "docker-compose.yml" up -d --build
 ## Advanced docker commands
 
 ### Dangling images
-```bash
+```shell
 # List all dangling images
 docker images --filter "dangling=true" -q --no-trunc
 # Remove all dangling images

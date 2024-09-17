@@ -2,7 +2,7 @@
 
 ## Version Switch
 
-```bash
+```shell
 # Set particular version
 mvn versions:set -DnewVersion=1.1-SNAPSHOT -DprocessAllModules=true -DgenerateBackupPoms=false
 
